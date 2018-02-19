@@ -1,0 +1,5 @@
+language: java
+install: mvn install --batch-mode -e --quiet
+jdk:
+  - oraclejdk8
+script: mvn install --batch-mode -e
