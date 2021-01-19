@@ -142,12 +142,12 @@
   <!-- Deploying to Sonatype Central: https://central.sonatype.org/pages/apache-maven.html -->
   <distributionManagement>
     <snapshotRepository>
-      <id>sonatype-nexus-snapshots</id>
+      <id>sonatype-nexus-oss</id>
       <name>Sonatype Nexus Snapshots</name>
       <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
     </snapshotRepository>
     <repository>
-      <id>sonatype-nexus-staging</id>
+      <id>sonatype-nexus-oss</id>
       <name>Sonatype Nexus Staging</name>
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
