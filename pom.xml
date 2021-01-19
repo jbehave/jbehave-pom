@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jbehave</groupId>
   <artifactId>jbehave-pom</artifactId>
-  <version>3</version>
+  <version>4</version>
   <packaging>pom</packaging>
   <name>JBehave POM</name>
   <description>JBehave POM providing configuration and build behaviour common to all JBehave projects, which use it as their parent POM.</description>
@@ -54,8 +54,7 @@
             <pushChanges>false</pushChanges>
             <localCheckout>true</localCheckout>
             <mavenExecutorId>forked-path</mavenExecutorId>
-            <useReleaseProfile>false</useReleaseProfile>
-            <arguments>${arguments} -Psonatype-oss-release</arguments>
+            <releaseProfiles>sonatype-oss-release</releaseProfiles>
           </configuration>
         </plugin>
         <plugin>
