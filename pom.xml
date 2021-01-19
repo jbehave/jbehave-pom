@@ -1,10 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>org.sonatype.oss</groupId>
-    <artifactId>oss-parent</artifactId>
-    <version>9</version>
-  </parent>
   <groupId>org.jbehave</groupId>
   <artifactId>jbehave-pom</artifactId>
   <version>2</version>
@@ -26,12 +21,12 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>3.0.0</version>
+          <version>3.1.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.0.1</version>
+          <version>3.0.2</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -41,12 +36,12 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>2.10.4</version>
+          <version>3.1.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>3.0.2</version>
+          <version>3.1.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -58,12 +53,15 @@
             <goals>deploy</goals>
             <pushChanges>false</pushChanges>
             <localCheckout>true</localCheckout>
+            <mavenExecutorId>forked-path</mavenExecutorId>
+            <useReleaseProfile>false</useReleaseProfile>
+            <arguments>${arguments} -Psonatype-oss-release</arguments>
           </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.6</version>
+          <version>3.7.1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -129,16 +127,30 @@
   <licenses>
     <license>
       <name>BSD license</name>
-      <url>https://github.com/jbehave/jbehave-pom/blob/master/LICENSE.txt</url>
+      <url>https://bitbucket.org/jbehave/jbehave-pom/blob/master/LICENSE.txt</url>
       <distribution>repo</distribution>
     </license>
   </licenses>
 
   <scm>
-    <connection>scm:git:git://github.com/jbehave/jbehave-pom.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/jbehave/jbehave-pom.git</developerConnection>
-    <url>https://github.com/jbehave/jbehave-pom</url>
+    <connection>scm:git:git://bitbucket.org/jbehave/jbehave-pom.git</connection>
+    <developerConnection>scm:git:ssh://git@bitbucket.org/jbehave/jbehave-pom.git</developerConnection>
+    <url>https://bitbucket.org/jbehave/jbehave-pom</url>
     <tag>HEAD</tag>
   </scm>
+
+  <!-- Deploying to Sonatype Central: https://central.sonatype.org/pages/apache-maven.html -->
+  <distributionManagement>
+    <snapshotRepository>
+      <id>sonatype-nexus-snapshots</id>
+      <name>Sonatype Nexus Snapshots</name>
+      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+    </snapshotRepository>
+    <repository>
+      <id>sonatype-nexus-staging</id>
+      <name>Sonatype Nexus Staging</name>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
 
 </project>
