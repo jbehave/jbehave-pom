@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jbehave</groupId>
   <artifactId>jbehave-pom</artifactId>
-  <version>2</version>
+  <version>3</version>
   <packaging>pom</packaging>
   <name>JBehave POM</name>
   <description>JBehave POM providing configuration and build behaviour common to all JBehave projects, which use it as their parent POM.</description>
