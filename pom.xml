@@ -140,6 +140,7 @@
   </scm>
 
   <!-- Deploying to Sonatype Central: https://central.sonatype.org/pages/apache-maven.html -->
+  <developers/>
   <distributionManagement>
     <snapshotRepository>
       <id>sonatype-nexus-oss</id>
