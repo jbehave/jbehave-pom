@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jbehave</groupId>
   <artifactId>jbehave-pom</artifactId>
-  <version>4</version>
+  <version>5</version>
   <packaging>pom</packaging>
   <name>JBehave POM</name>
   <description>JBehave POM providing configuration and build behaviour common to all JBehave projects, which use it as their parent POM.</description>
@@ -13,6 +13,7 @@
     <!-- NOTE: Set -Dfile.encoding=UTF-8 in MAVEN_OPTS -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <resource.encoding>UTF-8</resource.encoding>
+    <sonatype.nexus.url>https://s01.oss.sonatype.org</sonatype.nexus.url>
   </properties>
 
   <build>
@@ -152,12 +153,12 @@
     <snapshotRepository>
       <id>sonatype-nexus-oss</id>
       <name>Sonatype Nexus Snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+      <url>${sonatype.nexus.url}/content/repositories/snapshots/</url>
     </snapshotRepository>
     <repository>
       <id>sonatype-nexus-oss</id>
       <name>Sonatype Nexus Staging</name>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+      <url>${sonatype.nexus.url}/service/local/staging/deploy/maven2/</url>
     </repository>
   </distributionManagement>
 
