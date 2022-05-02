@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jbehave</groupId>
   <artifactId>jbehave-pom</artifactId>
-  <version>5</version>
+  <version>6</version>
   <packaging>pom</packaging>
   <name>JBehave POM</name>
   <description>JBehave POM providing configuration and build behaviour common to all JBehave projects, which use it as their parent POM.</description>
@@ -22,27 +22,30 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.3.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.0.2</version>
+          <version>3.3.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-gpg-plugin</artifactId>
-          <version>1.6</version>
+          <version>3.0.1</version>
+          <configuration>
+            <passphrase>${gpg.passphrase}</passphrase>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.4.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.2.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -61,12 +64,12 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.7.1</version>
+          <version>3.12.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
-          <version>3.0.1</version>
+          <version>3.2.1</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.xsite</groupId>
@@ -139,7 +142,7 @@
     <tag>HEAD</tag>
   </scm>
 
-  <!-- Deploying to Sonatype Central: https://central.sonatype.org/pages/apache-maven.html -->
+  <!-- Deploying to Sonatype Central: https://central.sonatype.org/publish/publish-maven -->
   <developers>
     <developer>
       <id>maurotalevi</id>
